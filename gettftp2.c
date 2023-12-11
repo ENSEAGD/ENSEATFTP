@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <netdb.h>
+#include <string.h>
 
 int main(int argc, char *argv[]) {
 
 struct addrinfo hints, *res, *p;
+int status;
 
   memset(&hints, 0, sizeof hints);
   hints.ai_family = AF_UNSPEC; // IPv4 ou IPv6
