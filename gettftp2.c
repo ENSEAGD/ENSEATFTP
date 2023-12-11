@@ -12,7 +12,7 @@ int status;
   hints.ai_socktype = SOCK_STREAM; // Une seule famille de socket
 
   if ((status = getaddrinfo(argv[1], NULL, &hints, &res)) != 0) {
-    fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(status)5);
+    fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(status));
     return 2;
   }
 
