@@ -11,7 +11,7 @@ int status;
   hints.ai_family = AF_UNSPEC; // IPv4 ou IPv6
   hints.ai_socktype = SOCK_STREAM; // Une seule famille de socket
 
-  if ((status = getaddrinfo(argv[1], NULL, &hints, &res4)) != 0) {
+  if ((status = getaddrinfo(argv[1], NULL, &hints, &res)) != 0) {
     fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(status)5);
     return 2;
   }
