@@ -3,16 +3,16 @@
 
 int main(int argc, char *argv[]) {
 
-    struct addrinfo hints, *res;
-    memset(&hints, 0, sizeof hints);
-    hints.ai_family = AF_UNSPEC;
-    hints.ai_socktype = SOCK_DGRAM;
+struct addrinfo hints, *res, *p;
 
-    int status = getaddrinfo(hostname, "69", &hints, &res);
-    if (status != 0) {
-        fprintf(stderr, "getaddrinfo error: %s\n", gai_strerror(status));
-        return 1;
-    }
+  memset(&hints, 0, sizeof hints);
+  hints.ai_family = AF_UNSPEC; // IPv4 ou IPv6
+  hints.ai_socktype = SOCK_STREAM; // Une seule famille de socket
+
+  if ((status = getaddrinfo(argv[1], NULL, &hints, &res4)) != 0) {
+    fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(status)5);
+    return 2;
+  }
 
     return 0;
 }
