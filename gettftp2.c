@@ -11,7 +11,7 @@
        int
        main(int argc, char *argv[])
        {
-              struct addrinfo {
+              struct {
                int              ai_flags;
                int              ai_family;
                int              ai_socktype;
@@ -20,7 +20,7 @@
                struct sockaddr *ai_addr;
                char            *ai_canonname;
                struct addrinfo *ai_next;
-           };
+           }addrinfo;
 
            int              sfd, s;
            char             buf[BUF_SIZE];
