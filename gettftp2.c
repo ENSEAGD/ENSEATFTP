@@ -26,9 +26,11 @@
            /* Obtain address(es) matching host/port. */
               
               struct hints {
+                     hints.ai_flags = 0;
                      hints.ai_family = AF_INET;    /* Allow IPv4 or IPv6 */
                      hints.ai_socktype = SOCK_DGRAM; /* Datagram socket */
                      hints.ai_protocol = IPPROTO_UDP; /* Any protocol */
+                     hints.ai_addrlen = 0;
                             };
 
            s = getaddrinfo(argv[1], argv[2], &hints, &result);
